@@ -3,19 +3,25 @@ const router = express.Router();
 const zod = require("zod");
 const {User} = require("../model/db.js");
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const signupBody = zod.object({
-    username: zod.string(),
+    username: zod.string().email(),
     password: zod.string(),
     firstName: zod.string(),
     lastName: zod.string()
 })
 
 router.post("/signup", async (req, res) => {
-    const { sucess } = signupBody.safeParse(req.body);
-    if (!sucess) {
-        return res.status(411).json({ message: "Email already taken / Incorrect inputs" });
+    const result = signupBody.safeParse(req.body);
+
+    // Validate inputs
+    if (!result.success) {
+        console.log("Validation errors:", result.error.errors);
+        return res.status(411).json({
+            message: "Invalid inputs",
+            errors: result.error.errors
+        });
     }
 
     const existingUser = await User.findOne({ username: req.body.username });
@@ -57,6 +63,7 @@ router.post("/signin", async (req, res) => {
 
     if(user){
         const token = jwt.sign({ userId: user._id }, JWT_SECRET);
+        console.log(token);
         res.json({
             token: token
         })
