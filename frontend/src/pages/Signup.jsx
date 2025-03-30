@@ -1,11 +1,11 @@
 
-import {Heading} from '../components/Heading'
-import {SubHeading} from '../components/SubHeading'
-import { InputBox } from '../components/InputBox'
-import { Button } from '../components/Button'
-import {BottomWarming} from '../components/BottomWarming'
+import Heading from '../components/Heading'
+import SubHeading from '../components/SubHeading'
+import InputBox from '../components/InputBox'
+import Button from '../components/Button'
+import BottomWarming from '../components/BottomWarming'
 
-export const Signup = () => {
+const Signup = () => {
   return (
     <div className='bg-slate-300 h-screen flex justify-center'>
       <div className='flex flex-col justify-center'>
@@ -28,3 +28,4 @@ export const Signup = () => {
   )
 }
 
+export default Signup

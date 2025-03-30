@@ -1,10 +1,12 @@
 import React from 'react'
 
-export const SendMoney = () => {
+const SendMoney = () => {
   return (
     <div>
       
     </div>
   )
 }
+
+export default SendMoney
 

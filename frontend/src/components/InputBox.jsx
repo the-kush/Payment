@@ -1,4 +1,4 @@
-export function InputBox({ label, placeholder }) { 
+const InputBox = ({ label, placeholder }) => { 
     return (
         <div>
             <div className="text-sm font-medium text-left py-2">
@@ -8,3 +8,5 @@ export function InputBox({ label, placeholder }) {
         </div>
     )
 }
+
+export default InputBox;
