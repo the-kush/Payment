@@ -19,7 +19,7 @@ const Signin = () => {
             <Button label={"Sign in"} />
           </div>
           <div>
-            <BottomWarming label={"Don't have an account?"} to={"/signup"} buttonText={"SignUp"} />
+            <BottomWarming label={"Don't have an account?"} to={"/signup"} buttonText={"SignUp"} home={"/"} buttonTextHome={"Click Here"}/>
           </div>
         </div>
       </div>
