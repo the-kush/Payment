@@ -8,9 +8,6 @@ function App() {
   
   return (
     <div>
-      <div className='font-bold text-2xl text-center p-4 bg-slate-300'>
-        Payment Application
-      </div>
       <BrowserRouter>
       <Routes>
         <Route path='/signin' element={<Signin /> } />

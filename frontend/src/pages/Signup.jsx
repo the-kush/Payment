@@ -21,7 +21,7 @@ const Signup = () => {
             <Button label={"Sign Up"} />
           </div>
 
-          <BottomWarming label={"Already have an account?"} to={"/signin"}/>
+          <BottomWarming label={"Already have an account?"} to={"/signin"} buttonText={"SignIn"}/>
         </div>
       </div>
     </div>

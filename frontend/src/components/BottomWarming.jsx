@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const BottomWarming = ( {label, buttonText, to}) => {           
+const BottomWarming = ( {label, to, buttonText}) => {           
     return (
         <div className="py-2 text-sm flex justify-center">
             <div>
